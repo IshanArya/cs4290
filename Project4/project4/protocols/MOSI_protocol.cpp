@@ -220,7 +220,6 @@ inline void MOSI_protocol::do_snoop_O (Mreq *request)
 
 inline void MOSI_protocol::do_snoop_OM (Mreq *request)
 {
-    printf("IN OM!\n");
 
     switch(request->msg) {
         case GETS:

@@ -10,11 +10,15 @@
 /** Cache states.  */
 typedef enum {
     MOESIF_CACHE_I = 1,
+    MOESIF_CACHE_IS,
     MOESIF_CACHE_S,
     MOESIF_CACHE_E,
     MOESIF_CACHE_O,
     MOESIF_CACHE_M,
     MOESIF_CACHE_F,
+    MOESIF_CACHE_VM,
+    MOESIF_CACHE_SM,
+    MOESIF_CACHE_PM
 } MOESIF_cache_state_t;
 
 class MOESIF_protocol : public Protocol {
@@ -37,10 +41,14 @@ public:
 
     inline void do_snoop_F (Mreq *request);
     inline void do_snoop_I (Mreq *request);
+    inline void do_snoop_IS (Mreq *request);
     inline void do_snoop_S (Mreq *request);
     inline void do_snoop_E (Mreq *request);
     inline void do_snoop_O (Mreq *request);
     inline void do_snoop_M (Mreq *request);
+    inline void do_snoop_VM (Mreq *request);
+    inline void do_snoop_SM (Mreq *request);
+    inline void do_snoop_PM (Mreq *request);
 };
 
 #endif // _MOESIF_CACHE_H
